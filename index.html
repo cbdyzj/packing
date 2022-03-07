@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+        }
+
+        #app {
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            background-color: #f6f6f6;
+        }
+
+        .packing {
+            position: relative;
+            box-sizing: border-box;
+            background-color: #fff;
+            height: 400px;
+            width: 300px;
+            box-shadow: rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0) 0 0 0 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0, rgba(0, 0, 0, 0.06) 0 1px 2px 0;
+            padding: 25px;
+            border-radius: 2px;
+        }
+
+        .line {
+            position: relative;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            border: 5px dashed #ccc;
+            padding: 10px;
+        }
+
+        .logo {
+            position: absolute;
+            display: inline-block;
+            left: 24px;
+            top: 16px;
+            font-size: 40px;
+            font-weight: bold;
+            user-select: none;
+            line-height: 1.25;
+        }
+
+        .logo-text {
+            background: linear-gradient(200deg, #fed133, #eb8f00);
+            -webkit-background-clip: text;
+            /*noinspection CssInvalidPropertyValue*/
+            background-clip: text;
+            color: transparent;
+        }
+
+        .description {
+            display: inline-block;
+            position: absolute;
+            left: 24px;
+            top: 80px;
+            font-size: 14px;
+            color: #603813;
+        }
+
+        .description > .title {
+            margin-bottom: 4px;
+        }
+
+        .cat {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            height: 100px;
+            width: 100px;
+            background-image: url("./grinning-cat.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+    </style>
+    <title>Packing</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="https://unpkg.com/vue-umd@3.2.31/dist/vue.umd.js"></script>
+<script>
+    const { createApp } = window['Vue']
+    const App = {
+        template: `
+          <div class="packing">
+          <div class="line">
+            <div class="logo">
+              <span class="logo-text">itagree</span>
+            </div>
+            <div class="description">
+              <div class="title">
+                <strong>Mixed cat litter</strong>
+              </div>
+              <div>From plants</div>
+              <div>Less dust</div>
+              <div>Solidarity</div>
+              <div>Solubility</div>
+              <div>2.5KG</div>
+            </div>
+            <div class="cat"></div>
+          </div>
+          </div>
+        `,
+        components: {},
+    }
+    createApp(App).mount('#app')
+</script>
+</body>
+</html>
